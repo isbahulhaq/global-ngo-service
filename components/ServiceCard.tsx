@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { ShieldCheck, Star, ArrowUpRight } from 'lucide-react';
 import { Service } from '../types';
 
-const ServiceCard = ({ service }: { service: Service }) => {
+// Fix: Used React.FC to correctly support intrinsic props like 'key' in TypeScript.
+const ServiceCard: React.FC<{ service: Service }> = ({ service }) => {
   return (
     <Link 
       to={`/service/${service.id}`}

@@ -31,18 +31,18 @@ const Home = () => {
 
       <div className="max-w-7xl mx-auto px-6 pt-10 pb-32 space-y-24">
         {/* Elite 8K Corporate Hero Section */}
-        <section className="relative rounded-[3.5rem] bg-[#020617] overflow-hidden shadow-2xl min-h-[700px] flex items-center border border-white/5">
+        <section className="relative rounded-[3.5rem] bg-[#020617] overflow-hidden shadow-2xl min-h-[750px] flex items-center border border-white/5">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(30,58,138,0.25),transparent_70%)]"></div>
             <img 
               src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=100&w=2500" 
               className="w-full h-full object-cover opacity-10 mix-blend-overlay"
-              alt="Corporate HQ"
+              alt="Corporate Background"
             />
           </div>
 
           <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 p-12 md:p-24 items-center">
-            <div className="lg:col-span-7 space-y-12 animate-fade-in">
+            <div className="lg:col-span-7 space-y-12">
               <div className="inline-flex items-center gap-3 bg-blue-500/10 border border-blue-500/20 px-6 py-2.5 rounded-full">
                 <ShieldCheck size={18} className="text-blue-400" />
                 <span className="text-[11px] font-black text-blue-300 uppercase tracking-[0.4em]">India's Premier Legal Advisor</span>
@@ -75,12 +75,12 @@ const Home = () => {
             </div>
 
             <div className="lg:col-span-5 hidden lg:block relative group">
-              {/* Profile Image: HD Indian Professional Woman in Sharp Black Suit (Coat-Pants) */}
+              {/* Profile Image: HD Indian Professional Woman in Sharp Black Blazer/Coat */}
               <div className="relative z-10 rounded-[4rem] overflow-hidden border-[12px] border-white/5 shadow-3xl ring-2 ring-white/10 group-hover:scale-[1.03] transition-all duration-1000">
                 <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=100&w=1200" 
+                  src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&q=100&w=1200" 
                   className="w-full aspect-[4/5] object-cover transition-all duration-1000"
-                  alt="Advocate Tamanna in Sharp Black Professional Suit"
+                  alt="Advocate Tamanna - Indian Professional Lawyer in Black Suit"
                 />
                 <div className="absolute bottom-0 inset-x-0 p-12 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-transparent">
                   <div className="space-y-1">
@@ -101,7 +101,6 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              {/* Decorative Glows */}
               <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-600/30 rounded-full blur-[100px] animate-pulse"></div>
               <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-400/20 rounded-full blur-[120px]"></div>
             </div>

@@ -165,15 +165,19 @@ const Navbar = () => {
   );
 };
 
-const ProtectedRoute = ({ children, role }: { children: React.ReactNode, role?: UserRole }) => {
+// Fix: Modified ProtectedRoute to make children optional in props and moved useEffect to follow Hook rules.
+const ProtectedRoute = ({ children, role }: { children?: React.ReactNode, role?: UserRole }) => {
   const { user, setIsLoginModalOpen, setPendingServiceRedirect } = useApp();
   const location = useLocation();
 
-  if (!user) {
-    useEffect(() => {
+  useEffect(() => {
+    if (!user) {
       setPendingServiceRedirect(location.pathname);
       setIsLoginModalOpen(true);
-    }, []);
+    }
+  }, [user, location.pathname, setIsLoginModalOpen, setPendingServiceRedirect]);
+
+  if (!user) {
     return <Navigate to="/" replace />;
   }
 
