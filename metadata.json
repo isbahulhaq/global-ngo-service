@@ -1,0 +1,7 @@
+{
+  "name": "Global NGO Service - Elite Legal Advisory",
+  "description": "Premium legal, compliance, and tech consultancy platform for high-impact NGOs and corporate entities across India.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
