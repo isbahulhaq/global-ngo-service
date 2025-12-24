@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Star, ShieldCheck, CheckCircle2, Clock, Calendar, ChevronRight, Share2, Info, FileText, Download, MessageSquare } from 'lucide-react';
+import { Star, ShieldCheck, CheckCircle2, Clock, Calendar, ChevronRight, Share2, Info, FileText, Download, MessageSquare, Award } from 'lucide-react';
 import { SERVICES } from '../constants';
 import { useApp } from '../App';
 import { ApplicationStatus } from '../types';
@@ -44,7 +44,6 @@ const ServiceDetail = () => {
         <div className="md:w-[45%]">
           <div className="sticky top-24 space-y-6">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 group">
-              {/* Fixed: Changed service.icon to service.image */}
               <img 
                 src={service.image} 
                 className="w-full aspect-square object-cover transition-transform duration-1000 group-hover:scale-105" 
@@ -61,33 +60,28 @@ const ServiceDetail = () => {
             <div className="grid grid-cols-2 gap-4">
               <button 
                 onClick={handleApply}
-                className="bg-[#ff9f00] text-white py-4 font-black rounded-xl shadow-lg hover:shadow-2xl hover:bg-orange-500 transition-all flex flex-col items-center justify-center gap-1 uppercase tracking-widest text-xs"
+                className="bg-[#0f172a] text-yellow-500 py-6 font-black rounded-xl shadow-lg hover:shadow-2xl hover:bg-[#1e293b] transition-all flex flex-col items-center justify-center gap-1 uppercase tracking-widest text-[10px]"
               >
-                <CheckCircle2 size={24} /> 
-                Apply for Registration
+                <CheckCircle2 size={24} className="mb-1" /> 
+                Apply Now
               </button>
-              <button className="bg-[#fb641b] text-white py-4 font-black rounded-xl shadow-lg hover:shadow-2xl hover:bg-orange-600 transition-all flex flex-col items-center justify-center gap-1 uppercase tracking-widest text-xs">
-                <MessageSquare size={24} /> 
-                Talk to Tamanna
-              </button>
+              <a 
+                href="https://wa.me/919266348507"
+                className="bg-green-600 text-white py-6 font-black rounded-xl shadow-lg hover:shadow-2xl hover:bg-green-700 transition-all flex flex-col items-center justify-center gap-1 uppercase tracking-widest text-[10px]"
+              >
+                <MessageSquare size={24} className="mb-1" /> 
+                Direct Chat
+              </a>
             </div>
 
-            <div className="bg-gray-50 rounded-xl p-5 border border-dashed border-gray-300">
-              <h4 className="font-bold text-gray-900 text-sm mb-3 uppercase tracking-widest">Pricing Transparency</h4>
-              <div className="space-y-2">
-                <div className="flex justify-between text-xs text-gray-600">
-                  <span>Professional Fee</span>
-                  <span className="font-bold text-gray-900">₹{service.price}</span>
-                </div>
-                <div className="flex justify-between text-xs text-gray-600">
-                  <span>Government Charges</span>
-                  <span className="font-bold text-blue-600">As per actuals</span>
-                </div>
-                <div className="pt-2 border-t mt-2 flex justify-between font-bold text-sm">
-                  <span>Total Payable</span>
-                  <span className="text-gray-900">Starts at ₹{service.price}</span>
-                </div>
+            <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+              <div className="flex items-center gap-3 mb-4">
+                <Award size={20} className="text-blue-600" />
+                <h4 className="font-black text-blue-900 text-xs uppercase tracking-widest">Consultation Policy</h4>
               </div>
+              <p className="text-[11px] text-blue-800/70 leading-relaxed font-bold uppercase tracking-tight">
+                Fees for legal drafting and liaison are determined based on specific organizational scale and case complexity. Apply to receive a customized professional proposal.
+              </p>
             </div>
           </div>
         </div>
@@ -105,34 +99,36 @@ const ServiceDetail = () => {
           <div className="space-y-4">
             <h1 className="text-4xl font-black text-gray-900 tracking-tight leading-tight">
               {service.name} <br/>
-              <span className="text-blue-600 font-light text-2xl tracking-normal">Comprehensive Legal Registration Service</span>
+              <span className="text-blue-600 font-light text-2xl tracking-normal">Premium Strategic Compliance Asset</span>
             </h1>
             
             <div className="flex items-center gap-4 flex-wrap">
               <div className="bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
                 {service.rating} <Star size={12} fill="currentColor" />
               </div>
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest border-l pl-4">{service.reviews.toLocaleString()} Client Testimonials</span>
-              <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt="Assured" className="h-4" />
+              <span className="text-xs font-bold text-gray-500 uppercase tracking-widest border-l pl-4">{service.reviews.toLocaleString()} Enterprise Partners</span>
+              <div className="bg-yellow-50 text-yellow-700 px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest border border-yellow-200">
+                Advocate Led
+              </div>
             </div>
           </div>
 
           {/* Special Banner */}
-          <div className="bg-green-50 border border-green-200 p-4 rounded-xl flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="bg-green-600 p-2 rounded-lg text-white shadow-lg"><Download size={20} /></div>
+          <div className="bg-[#0f172a] border border-white/10 p-5 rounded-2xl flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="bg-yellow-500 p-2.5 rounded-xl text-[#0f172a] shadow-lg"><Download size={20} /></div>
               <div>
-                <p className="font-black text-green-800 text-sm">Download Legal Checklist</p>
-                <p className="text-[10px] text-green-600 uppercase font-bold tracking-widest">Available for Limited Time</p>
+                <p className="font-black text-white text-sm uppercase tracking-tighter">Compliance Checklist v4.0</p>
+                <p className="text-[9px] text-gray-400 uppercase font-bold tracking-[0.2em]">Mandatory Pre-filing Documents</p>
               </div>
             </div>
-            <button className="text-green-800 font-black text-xs uppercase hover:underline">Get PDF</button>
+            <button className="text-yellow-500 font-black text-[10px] uppercase tracking-widest hover:underline px-4">Download PDF</button>
           </div>
 
           {/* Highlights */}
           <div className="space-y-6">
             <h3 className="text-lg font-black uppercase tracking-widest flex items-center gap-2 border-l-4 border-blue-600 pl-4">
-              Service Pillars
+              Core Deliverables
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {service.features.map((feature, idx) => (
@@ -165,18 +161,18 @@ const ServiceDetail = () => {
                     {service.description}
                   </p>
                   <div className="grid grid-cols-2 gap-8">
-                    <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 flex items-center gap-4">
-                      <Clock className="text-blue-600" size={32} />
+                    <div className="bg-gray-900 p-6 rounded-2xl flex items-center gap-4 shadow-xl">
+                      <Clock className="text-yellow-500" size={32} />
                       <div>
-                        <p className="text-[10px] text-blue-400 font-black uppercase tracking-widest">SLA Timeframe</p>
-                        <p className="font-black text-blue-900 text-lg">{service.timeframe}</p>
+                        <p className="text-[10px] text-gray-500 font-black uppercase tracking-widest">SLA Timeframe</p>
+                        <p className="font-black text-white text-lg tracking-tighter">{service.timeframe}</p>
                       </div>
                     </div>
-                    <div className="bg-yellow-50 p-6 rounded-2xl border border-yellow-100 flex items-center gap-4">
-                      <Calendar className="text-yellow-600" size={32} />
+                    <div className="bg-blue-600 p-6 rounded-2xl flex items-center gap-4 shadow-xl">
+                      <Calendar className="text-white" size={32} />
                       <div>
-                        <p className="text-[10px] text-yellow-500 font-black uppercase tracking-widest">Certificate Validity</p>
-                        <p className="font-black text-yellow-900 text-lg">{service.validity}</p>
+                        <p className="text-[10px] text-blue-200 font-black uppercase tracking-widest">Certificate Validity</p>
+                        <p className="font-black text-white text-lg tracking-tighter">{service.validity}</p>
                       </div>
                     </div>
                   </div>
@@ -212,33 +208,29 @@ const ServiceDetail = () => {
 
               {activeTab === 'faq' && (
                 <div className="space-y-4">
-                  {service.faqs.map((faq, idx) => (
-                    <details key={idx} className="group border-2 border-gray-50 rounded-2xl p-6 bg-white cursor-pointer hover:border-blue-100 transition shadow-sm">
-                      <summary className="font-black text-sm text-gray-900 flex justify-between items-center list-none uppercase tracking-tight">
-                        {faq.question}
-                        <ChevronRight className="group-open:rotate-90 transition text-gray-400" size={18} />
-                      </summary>
-                      <p className="text-sm text-gray-600 mt-4 pt-4 border-t font-medium leading-relaxed">{faq.answer}</p>
-                    </details>
-                  ))}
+                  <div className="bg-gray-50 p-8 rounded-3xl border border-dashed border-gray-200 text-center">
+                     <Info size={40} className="mx-auto text-gray-300 mb-4" />
+                     <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">Direct Consultation Required for Q&A</p>
+                     <p className="text-[11px] text-gray-400 mt-2">Due to high case volume, FAQs are provided during the strategy call.</p>
+                  </div>
                 </div>
               )}
             </div>
           </div>
 
-          <div className="p-8 bg-blue-900 text-white rounded-3xl relative overflow-hidden shadow-2xl">
+          <div className="p-8 bg-[#0f172a] text-white rounded-3xl relative overflow-hidden shadow-2xl">
             <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
               <div className="w-20 h-20 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center border border-white/20">
                 <ShieldCheck size={40} className="text-yellow-400" />
               </div>
               <div className="text-center md:text-left space-y-2">
-                <h4 className="text-xl font-black uppercase tracking-widest">Global NGO Service Assurance</h4>
-                <p className="text-sm text-blue-200 font-medium italic">"We handle the complexity, so you can focus on your impact."</p>
+                <h4 className="text-xl font-black uppercase tracking-widest">Elite Assurance Protocol</h4>
+                <p className="text-sm text-blue-200 font-medium italic">"Every case is personal. Every organization is a legacy." — Advocate Tamanna</p>
                 <div className="pt-4 flex items-center justify-center md:justify-start gap-4">
                   <div className="flex -space-x-3">
-                    {[1,2,3].map(i => <img key={i} src={`https://i.pravatar.cc/40?img=${i+10}`} className="w-8 h-8 rounded-full border-2 border-blue-900" alt="Avatar"/>)}
+                    {[1,2,3,4].map(i => <img key={i} src={`https://i.pravatar.cc/40?img=${i+20}`} className="w-8 h-8 rounded-full border-2 border-gray-900" alt="Avatar"/>)}
                   </div>
-                  <span className="text-[10px] font-bold text-blue-300 uppercase">Trusted by 500+ NGOs this month</span>
+                  <span className="text-[10px] font-bold text-blue-300 uppercase tracking-widest">Network of 1200+ Registered NGOs</span>
                 </div>
               </div>
             </div>
