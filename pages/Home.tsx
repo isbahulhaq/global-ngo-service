@@ -75,12 +75,12 @@ const Home = () => {
             </div>
 
             <div className="lg:col-span-5 hidden lg:block relative group">
-              {/* Profile Image: High-Definition Indian Professional Woman in Sharp Black Suit */}
+              {/* Profile Image: HD Indian Professional Woman in Sharp Black Suit (Coat-Pants) */}
               <div className="relative z-10 rounded-[4rem] overflow-hidden border-[12px] border-white/5 shadow-3xl ring-2 ring-white/10 group-hover:scale-[1.03] transition-all duration-1000">
                 <img 
-                  src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&q=100&w=1200" 
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=100&w=1200" 
                   className="w-full aspect-[4/5] object-cover transition-all duration-1000"
-                  alt="Advocate Tamanna - Indian Professional Lawyer in Black Coat"
+                  alt="Advocate Tamanna in Sharp Black Professional Suit"
                 />
                 <div className="absolute bottom-0 inset-x-0 p-12 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-transparent">
                   <div className="space-y-1">
