@@ -9,11 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
+    "lucide-react": "0.473.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "lucide-react": "0.473.0",
-    "recharts": "2.15.0",
-    "react-router-dom": "6.28.1"
+    "react-router-dom": "6.28.1",
+    "recharts": "2.15.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

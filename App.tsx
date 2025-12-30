@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useCallback, createContext, useContext } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate, Link, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { Search, User as UserIcon, LogIn, LayoutDashboard, ShoppingBag, Menu, X, ArrowRight, ShieldCheck, HelpCircle, FileText, Bell, MapPin, Globe, Phone, MessageSquare, Mail } from 'lucide-react';
 import { Service, User, UserRole, Application, ApplicationStatus } from './types';
 import { SERVICES, CATEGORIES } from './constants';
@@ -305,6 +306,7 @@ export default function App() {
           </main>
           <Footer />
           <LoginModal />
+          <Analytics />
           
           <a 
             href="https://wa.me/919266348507" 
